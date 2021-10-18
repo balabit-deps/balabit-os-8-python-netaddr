@@ -1,0 +1,18 @@
+Description: fix Python 3.8 SyntaxWarning on using `is not` with a string literal
+
+ closes PR #193
+
+From: Stefan Nordhausen <stefan.nordhausen@solarisbank.de>
+Origin: https://github.com/netaddr/netaddr/commit/cc2a9bb31fae
+Bug-Ubuntu: https://launchpad.net/bugs/1877792
+--- a/netaddr/strategy/__init__.py
++++ b/netaddr/strategy/__init__.py
+@@ -186,7 +186,7 @@
+         bits = ('0' * word_size + bit_str)[-word_size:]
+         bit_words.append(bits)
+ 
+-    if word_sep is not '':
++    if word_sep != '':
+         #   Check custom separator.
+         if not _is_str(word_sep):
+             raise ValueError('word separator is not a string: %r!' % word_sep)

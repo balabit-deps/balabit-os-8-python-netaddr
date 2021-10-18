@@ -1,3 +1,11 @@
+python-netaddr (0.7.19-3ubuntu1) focal; urgency=medium
+
+  * d/p/fix-python-38-syntaxwarning.patch: (LP: #1877792)
+    - Fix Python 3.8 SyntaxWarning on using `is not` with a string
+    literal.
+
+ -- Eric Desrochers <eric.desrochers@canonical.com>  Mon, 18 Oct 2021 11:25:44 -0400
+
 python-netaddr (0.7.19-3) unstable; urgency=medium
 
   * d/control: build-depends on python-all. Closes: #950362.
